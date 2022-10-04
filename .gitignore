@@ -3,12 +3,14 @@
 
 #idea
 .idea
-
+/target
 # Log file
 *.log
 
 # BlueJ files
 *.ctxt
+
+.gitignore
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

@@ -7,20 +7,9 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <context:component-scan base-package="org.cinema"/>
 
-    <bean id="musicBean"
-          class="org.cinema.ClassicalMusic"
-          init-method="onInit"
-          destroy-method="onDestroy"
-          factory-method="getClassicalMusic"
-    />
+    <context:property-placeholder location="musicPlayer.properties"/>
 
-    <!--    <bean id="musicPlayer" class="org.cinema.MusicPlayer" scope="prototype">-->
-    <!--        <property name="music" ref="musicBean"/>-->
-
-    <!--        <property name="name" value="${musicPlayer.name}"/>-->
-    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-    <!--    </bean>-->
 
 </beans>

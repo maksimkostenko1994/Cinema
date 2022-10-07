@@ -1,23 +1,18 @@
 package org.cinema;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.cinema.classes.Computer;
+import org.cinema.classes.MusicPlayer;
+import org.cinema.config.MusicConfig;
+import org.cinema.genres.ClassicalMusic;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestSpring {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
-        );
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MusicConfig.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
-
-        ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
-        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
-
-        System.out.println(classicalMusic1 == classicalMusic2);
+        musicPlayer.playMusic();
 
         context.close();
     }

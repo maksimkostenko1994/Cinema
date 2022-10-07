@@ -1,4 +1,4 @@
-package org.cinema;
+package org.cinema.interfaces;
 
 public interface Music {
     String getSong();
